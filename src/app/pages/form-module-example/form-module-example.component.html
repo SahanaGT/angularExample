@@ -1,5 +1,5 @@
-<div class="container-fluid ">
-    <h3>Form Example</h3>
+<div class="container-fluid bgColorContainer">
+    <h3 class="text-secondary text-lest  font-weight-bold">Form Example</h3>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <div class="col-md-12 row">
         <div class="col-md-3">
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" formControlName="clgName">
         </div>
         <div class="col-md-3">
-          <button (click)="addItem()" class="btn btn-info">+</button>
+          <button (click)="addItem()" class="btn btn-info" style="margin-top: 10%">+</button>
         </div>
       </div>
       <hr>
@@ -37,13 +37,16 @@
                 <input type="text"  class="form-control" formControlName="breakTime">
             </div>
             <div class="col-md-3">
-                <button (click)="removeItem(i)" class="btn btn-info mt-2">-</button>
+                <button (click)="removeItem(i)" class="btn btn-info" style="margin-top: 10%">-</button>
               </div>
            </div>
         </div>
       <div class="col-md-4 offset-md-4 mt-2">
-          <button type="Submit" class="btn btn-info ">Click</button>
+          <button type="Submit" class="btn btn-info">Click</button>
       </div>
     </form>
+</div>
+<div>
+  <app-template-driven-form></app-template-driven-form>
 </div>
 

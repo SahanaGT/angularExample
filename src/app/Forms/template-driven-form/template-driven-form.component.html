@@ -1,3 +1,45 @@
-<p>
-  template-driven-form works!
-</p>
+<div class="container-fluid bgColorContainer">
+    <h3 class="text-secondary text-lest  font-weight-bold">Template Form</h3>
+    <form  #heroForm="ngForm">
+      <div class="row col-md-12">
+          <div class="form-group col-md-3">
+              <label for="name">Name</label>
+              <input type="text"  name="name" [(ngModel)]="model.name" class="form-control" id="name" required #name="ngModel">
+              <div [hidden]="name.valid || name.pristine"  class="alert alert-danger">
+                  Name is required
+              </div>
+          </div>
+       
+            <div class="form-group col-md-3">
+              <label for="address">Address</label>
+              <input type="text"  name="address" [(ngModel)]="model.address" class="form-control" id="address">
+            </div>
+            
+            <div class="form-group col-md-3">
+                <label for="branches">Branches</label>
+                <select class="form-control" name="branches" id="branches" [(ngModel)]="model.branch" required>
+                  <option></option>
+                  <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <input name="st" id="st" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" class="form-control">
+                <owl-date-time #dt1></owl-date-time>
+              </div>
+              <div class="form-group col-md-3">
+                  <input [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2">
+                  <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+            </div>
+            <label class="example-input-wrapper">
+                Time:
+                <input placeholder="Time:"
+                       [(ngModel)]="dateTime2"
+                       [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
+                <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+            </label>
+       </div>
+       <div class="form-group col-md-3 offset-md-4">
+          <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+</div>

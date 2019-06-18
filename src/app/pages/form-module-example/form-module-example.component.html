@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Form Example</li>
+        </ol>
+      </nav>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-12 row">
+        <div class="col-md-3">
+            <label> First Name:</label>
+            <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="col-md-3">
+            <label> Last Name: </label>
+            <input type="text" class="form-control" formControlName="lastName">
+        </div>
+      </div>
+      <div class="col-md-4 col-offset-4">
+          <button type="Submit" class="btn btn-info">Click</button>
+      </div>
+      
+      </form>
+</div>
+

@@ -26,15 +26,21 @@
             <!-- The repeated alias template -->
             <div class="col-md-3">
                 <label>Start Time</label>
-                <input type="text"  class="form-control" formControlName="startTime">
+                 <input placeholder="Time:" name="stime" formControlName="startTime"
+                [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3"  class="form-control" >
+                <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
             </div>
             <div class="col-md-3">
                 <label>End Time</label>
-                <input type="text"  class="form-control" formControlName="endTime">
+                <input placeholder="Time:" name="endTime" formControlName="endTime"
+                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"  class="form-control" >
+                <owl-date-time [pickerType]="'timer'" #dt1></owl-date-time>
             </div>
             <div class="col-md-3">
                 <label>Break Time</label>
-                <input type="text"  class="form-control" formControlName="breakTime">
+                <input placeholder="Time:" name="breakTime" formControlName="breakTime"
+                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"  class="form-control" >
+                <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
             </div>
             <div class="col-md-3">
                 <button (click)="removeItem(i)" class="btn btn-info" style="margin-top: 10%">-</button>

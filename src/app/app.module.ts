@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { FormModuleExampleComponent } from './pages/form-module-example/form-module-example.component';
 import { TemplateDrivenFormComponent } from './Forms/template-driven-form/template-driven-form.component';
 import { HeaderComponent } from './pages/pagelayout/header/header.component';
+
+
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     FormsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

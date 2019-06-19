@@ -14,12 +14,16 @@ export class TemplateDrivenFormComponent implements OnInit {
   model = new FormExampleClass(18, 'Sandeep', this.branches[0], 'Bangalore');
   submitted = false;
   public startAt = new Date(2018, 3, 10, 10, 30, 30);
+  public dateTime2: any;
   constructor() { }
 
   ngOnInit() {
   }
   onSubmit() {
     this.submitted = true;
+  }
+newHero() {
+    this.model = new FormExampleClass(18, '', '');
   }
     get diagnostic() { return JSON.stringify(this.model); }
 }

@@ -1,6 +1,6 @@
 <div class="container-fluid bgColorContainer">
     <h3 class="text-secondary text-lest  font-weight-bold">Template Form</h3>
-    <form  #heroForm="ngForm">
+    <form  #heroForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="row col-md-12">
           <div class="form-group col-md-3">
               <label for="name">Name</label>
@@ -9,12 +9,10 @@
                   Name is required
               </div>
           </div>
-       
             <div class="form-group col-md-3">
               <label for="address">Address</label>
               <input type="text"  name="address" [(ngModel)]="model.address" class="form-control" id="address">
             </div>
-            
             <div class="form-group col-md-3">
                 <label for="branches">Branches</label>
                 <select class="form-control" name="branches" id="branches" [(ngModel)]="model.branch" required>
@@ -22,24 +20,36 @@
                   <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
                 </select>
             </div>
-            <div class="form-group col-md-3">
-                <input name="st" id="st" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" class="form-control">
-                <owl-date-time #dt1></owl-date-time>
-              </div>
-              <div class="form-group col-md-3">
-                  <input [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2">
-                  <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
-            </div>
+           
             <label class="example-input-wrapper">
                 Time:
-                <input placeholder="Time:"
+                <input placeholder="Time:" name="time"
                        [(ngModel)]="dateTime2"
                        [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
-                <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+                <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
             </label>
        </div>
        <div class="form-group col-md-3 offset-md-4">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-danger" (click)="newHero(); heroForm.reset()">New</button>
       </div>
     </form>
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+          <div class="col-xs-3">Name:</div>
+          <div class="col-xs-9">{{ model.name }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">Address:</div>
+          <div class="col-xs-9">{{ model.address }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">Branch:</div>
+          <div class="col-xs-9">{{ model.branch }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+      </div>
+   
 </div>

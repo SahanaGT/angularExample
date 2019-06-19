@@ -4,8 +4,21 @@
       <div class="col-md-12 row">
         <div class="col-md-3">
             <label> First Name:</label>
-            <input type="text" class="form-control" formControlName="firstName">
-        </div>
+            <input type="text" id="firstName" class="form-control" formControlName="firstName" required minlength="5">
+
+            <!-- <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+              <div *ngIf="firstName.errors.required">
+                Name is required.
+              </div>
+              <div *ngIf="firstName.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+              <div *ngIf="firstName.errors.forbiddenName">
+                Name cannot be Bob.
+              </div>
+            </div> -->
+
+        </div>  
         <div class="col-md-3">
             <label> Last Name: </label>
             <input type="text" class="form-control" formControlName="lastName">

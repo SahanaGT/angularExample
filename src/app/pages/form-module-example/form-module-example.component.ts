@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl , FormGroup , FormArray , FormBuilder,Validators} from '@angular/forms'
+import { FormControl , FormGroup , FormArray , FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form-module-example',
@@ -10,7 +10,7 @@ export class FormModuleExampleComponent implements OnInit {
   exampleForm: FormGroup;
   items: FormArray;
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
+    firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl(''),
     clgName : new FormControl(''),
     items: this.fb.array([ this.createItem() ])

@@ -1,4 +1,4 @@
-import { Component, OnInit,NgModule } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { FormExampleClass } from 'src/app/form-example-class';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
